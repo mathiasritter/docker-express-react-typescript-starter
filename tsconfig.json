@@ -1,9 +1,20 @@
 {
-  "extends": "./tsconfig.build.json",
   "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
       "@thisproject/*": ["packages/*/src"]
     }
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
