@@ -8,6 +8,5 @@ COPY package*.json ./
 RUN npm install --global lerna
 RUN npm install
 RUN npm run bootstrap
-RUN npm run build
 
-CMD ["npm", "run", "start"]
+CMD ["sh", "-c", "npm run build && npm run start"]
