@@ -1,0 +1,23 @@
+{
+  "name": "@thisproject/server",
+  "version": "1.0.0",
+  "scripts": {
+    "watch:build": "npx webpack -w",
+    "watch:server": "nodemon dist/server.js | ./node_modules/.bin/pino-pretty -c -t -i pid,hostname",
+    "dev": "node watch-shim.js && npm-run-all --parallel watch:*",
+    "build": "npx webpack --mode production",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@thisproject/core": "^1.0.0",
+    "express": "^4.17.1",
+    "pino": "^6.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/pino": "^6.0.1",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "pino-pretty": "^4.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "../../.eslintrc",
+    "plugin:react/recommended"
+  ]
+}
