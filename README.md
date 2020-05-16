@@ -1,6 +1,6 @@
-# docker node react typescript starter
+# docker express react typescript starter
 
-This repository is a starter template for a fullstack typescript project with node in the back-end and react on the front-end.
+This repository is a starter template for a full stack typescript project with express in the back-end and react on the front-end.
 The application runs fully isolated in docker containers.
 
 ## running locally

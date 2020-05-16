@@ -1,5 +1,5 @@
 {
-  "name": "wifi-probes-dashboard",
+  "name": "docker-express-react-typescript-starter",
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
