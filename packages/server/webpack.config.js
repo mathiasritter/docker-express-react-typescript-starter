@@ -1,4 +1,5 @@
 const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
 const serverConfig = {
     mode: process.env.NODE_ENV || "development",
@@ -22,6 +23,11 @@ const serverConfig = {
         filename: "server.js",
         path: path.resolve(__dirname, "dist")
     },
+    externals: [
+        nodeExternals({
+            whitelist: ["@thisproject/core"]
+        })
+    ],
     target: "node",
     node: {
         __dirname: false
