@@ -26,6 +26,7 @@ const clientConfig = {
         inline: true,
         disableHostCheck: true,
         compress: true,
+        historyApiFallback: true,
         https: {
             key: path.resolve(__dirname, "../../nginx/localhost.key"),
             cert: path.resolve(__dirname, "../../nginx/localhost.crt")
