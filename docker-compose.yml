@@ -1,18 +1,21 @@
 version: "3.7"
 services:
   node:
-    build: .
+    build:
+      context: .
+      dockerfile: node.Dockerfile
     env_file:
       - .env
     volumes:
       - react-volume:/app/packages/client/dist
   nginx:
-    image: nginx:1.17-alpine
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
     env_file:
       - .env
     volumes:
       - react-volume:/usr/share/nginx/html:ro
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
       - 80:80
     depends_on:
