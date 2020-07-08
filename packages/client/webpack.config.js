@@ -28,11 +28,17 @@ const clientConfig = {
         compress: true,
         historyApiFallback: true,
         https: {
-            key: path.resolve(__dirname, "../../nginx/localhost.key"),
-            cert: path.resolve(__dirname, "../../nginx/localhost.crt")
+            key: path.resolve(__dirname, "../../lcldev/localhost.key"),
+            cert: path.resolve(__dirname, "../../lcldev/localhost.crt")
         },
         host: "0.0.0.0",
-        port: 3001
+        port: 3001,
+        proxy: {
+            "/api": {
+                target: "http://localhost:3000",
+                pathRewrite: {"^/api" : ""}
+            }
+        }
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"]

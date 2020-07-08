@@ -6,20 +6,9 @@ services:
       dockerfile: lcldev/Dockerfile
     env_file:
       - .env
+    ports:
+    - 443:3001
+    - 3001:3001
     volumes:
       - ..:/app
       - /app/node_modules
-  nginx:
-    image: nginx:1.17-alpine
-    env_file:
-      - .env
-    volumes:
-      - ../nginx/nginx.lcl.conf:/etc/nginx/conf.d/default.conf:ro
-      - ../nginx/localhost.crt:/etc/ssl/certs/localhost.crt:ro
-      - ../nginx/localhost.key:/etc/ssl/private/localhost.key:ro
-    ports:
-      - 443:443
-      - 80:80
-      - 3001:3001
-    depends_on:
-      - node
