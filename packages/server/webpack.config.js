@@ -25,7 +25,7 @@ const serverConfig = {
     },
     externals: [
         nodeExternals({
-            whitelist: ["@thisproject/core"]
+            allowlist: ["@thisproject/core"]
         })
     ],
     target: "node",

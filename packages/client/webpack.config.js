@@ -11,14 +11,10 @@ const clientConfig = {
                 loader: "ts-loader",
                 exclude: /node_modules/,
                 options: {
-                    configFile: "tsconfig.json"
-                }
+                    configFile: "tsconfig.json",
+                },
             },
-            {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"]
-            }
-        ]
+        ],
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),
@@ -29,32 +25,32 @@ const clientConfig = {
         historyApiFallback: true,
         https: {
             key: path.resolve(__dirname, "../../lcldev/localhost.key"),
-            cert: path.resolve(__dirname, "../../lcldev/localhost.crt")
+            cert: path.resolve(__dirname, "../../lcldev/localhost.crt"),
         },
         host: "0.0.0.0",
         port: 3001,
         proxy: {
             "/api": {
                 target: "http://localhost:3000",
-                pathRewrite: {"^/api" : ""}
-            }
-        }
+                pathRewrite: { "^/api": "" },
+            },
+        },
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"]
+        extensions: [".tsx", ".ts", ".js"],
     },
     output: {
         publicPath: "/",
         filename: "bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
     },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
             template: "./src/index.html",
-            filename: "index.html"
-        })
-    ]
+            filename: "index.html",
+        }),
+    ],
 };
 
 module.exports = [clientConfig];

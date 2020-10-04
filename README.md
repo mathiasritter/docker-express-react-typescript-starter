@@ -1,9 +1,9 @@
-# docker express react typescript starter
+# Docker Express React TypeScript Starter
 
-This repository is a starter template for a full stack typescript project with express in the back-end and react on the front-end.
-The application runs fully isolated in docker containers.
+This repository is a starter template for a full stack TypeScript project with Express in the back-end and React on the front-end.
+The application runs fully isolated in Docker containers.
 
-## running locally
+## Running locally
 
 Install `docker` on your machine and follow these steps:
 
@@ -13,7 +13,9 @@ Install `docker` on your machine and follow these steps:
 
 To stop the application, run `docker-compose down`.
 
-## deploying to the cloud
+## Deploying to the Cloud
 
 Similar to local development, there is a `docker-compose.yml` in the root of this repository.
 Use this configuration to create docker containers for production.
+
+Important: When stopping the service you must run `docker-compose down -v` (note the `-v` option) to ensure that you're not using an outdated React volume when starting next time.
