@@ -2,7 +2,7 @@ import express from "express";
 import { logger } from "./logging";
 import { apiRouter } from "./routes";
 
-const port = 3000;
+const port = 3001;
 const app = express();
 
 app.use(apiRouter);
